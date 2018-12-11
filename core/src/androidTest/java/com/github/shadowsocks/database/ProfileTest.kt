@@ -34,3 +34,14 @@ class ProfileTest {
                 results.single().toUri())
     }
 }
+
+class ProfileUS {
+    @US
+    fun parsing() {
+        val results = Profile.findAllUrls("garble ss://Y2hhY2hhMjA6IWNodWRpa2hhbmtpIUAyMDYuMTg5LjIxOS4xNTY6Njk5#us-server garble")
+                .toList()
+        Assert.assertEquals(1, results.size)
+        Assert.assertEquals("ss://chacha20:!chudikhanki!@206.189.219.156:699#us-server".toUri(),
+                results.single().toUri())
+    }
+
